@@ -1,0 +1,259 @@
+:root {
+  --navbarh: 45px;
+}
+
+html * {
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: xx-large;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  border-bottom: 3px solid orangered;
+}
+
+h3 {
+  margin: 10px 0px;
+}
+
+/* full height scroll. ref: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type#examples*/
+.container {
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+  scroll-snap-type: y proximity;
+  margin: 0px;
+}
+
+.fullscroll {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+.fullscroll {
+  align-items: flex-starts;
+  background-color: rgb(255, 225, 192);
+  color: black;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.fullscroll:first-child {
+  align-items: center;
+  background-color: rgb(255, 153, 0);
+  color: white;
+  padding: 0px;
+}
+
+.fullscroll:nth-child(2n) {
+  background-color: rgb(255, 213, 164);
+  color: black;
+}
+
+content {
+  padding: var(--navbarh);
+  width: 100%;
+}
+
+/* nav */
+.nav-bar {
+  background-color: floralwhite;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  height: var(--navbarh);
+}
+
+.nav-bar a {
+  display: inline-block;
+  /*important for vertical inline align*/
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+.nav-bar a:visited a:link {
+  color: black;
+  background-color: floralwhite;
+}
+
+.nav-bar a:hover {
+  background-color: orange;
+  color: black;
+  text-shadow: 0px 0px;
+  border-bottom: 1px solid black;
+}
+
+.nav-bar a:active {
+  opacity: 0.3;
+  color: white;
+  text-shadow: 0px 0px;
+}
+
+/* menu */
+.nav-bar>#nav-check {
+  display: none;
+}
+
+.nav-bar>.dropdown-menu {
+  position: inline;
+}
+
+/* css menu: ref: https://codepen.io/jo_Geek/pen/xgbaEr*/
+@media (max-width:600px) {
+  .nav-bar {
+    overflow: visible;
+  }
+
+  .nav-header {
+    flex: 1;
+    display: flex;
+  }
+
+  .nav-header>a {
+    flex: 1;
+    text-align: start;
+  }
+
+  /* draw menu button */
+  .nav-bar>.nav-btn {
+    display: inline-block;
+    /* position: absolute;
+    right: 0px;
+    top: 0px; */
+
+    width: calc(var(--navbarh) - 20px);
+    height: calc(var(--navbarh) - 20px);
+    padding: 10px;
+  }
+
+  .nav-bar>.nav-btn>label>span {
+    display: block;
+    width: calc(var(--navbarh) - 20px);
+    height: calc((var(--navbarh) - 20px) / 3);
+    border-top: 2px solid black;
+  }
+
+  .nav-bar>#nav-check:not(:checked)~.nav-btn {
+    opacity: 1;
+  }
+
+  .nav-bar>.nav-btn:hover,
+  .nav-bar>#nav-check:checked~.nav-btn {
+    background-color: gray;
+    opacity: 0.9;
+  }
+
+  /* draw menu */
+  .nav-bar>.dropdown-menu {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: gray;
+    opacity: 0.9;
+    transition: all 0.3s ease-in;
+    top: var(--navbarh);
+    left: 0px;
+  }
+
+  .nav-bar>.dropdown-menu>a {
+    display: block;
+    width: 100%;
+    text-align: start;
+  }
+
+  .nav-bar>#nav-check:not(:checked)~.dropdown-menu {
+    height: 0px;
+    overflow-y: hidden;
+  }
+
+  .nav-bar>#nav-check:checked~.dropdown-menu {
+    height: calc(100vh - var(--navbarh));
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* skill set */
+.codebox {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.code {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 2px 2px black;
+  background-color: orange;
+  color: white;
+  margin: 2px 5px;
+}
+
+/* project */
+.projectbox {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, calc(100vw /4 + 25px));
+  gap: 10px;
+}
+
+.project {
+  border: 3px solid orangered;
+  border-radius: 5px;
+  box-shadow: 5px 2px 2px black;
+  padding: 10px;
+  height: calc(100vw /4);
+  width: calc(100vw /4);
+  background-color: floralwhite;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.projectimg {
+  width: 100%;
+  height: calc(100vw /16); /* {4}x2x2 */
+  object-fit: cover;
+}
+
+@media (max-width:600px) {
+  .projectbox {
+    grid-template-columns: repeat(auto-fill, calc(100vw /2 + 25px));
+  }
+  
+  .project {
+    height: calc(100vw /2);
+    width: calc(100vw /2);
+  }
+  
+  .projectimg {
+    height: calc(100vw /8); /* {2}x2x2 */
+  }
+}
+
+/* contact */
+table {
+  margin: 0px auto;
+}
