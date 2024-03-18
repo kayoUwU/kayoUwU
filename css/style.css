@@ -50,6 +50,12 @@ h3 {
   scroll-snap-align: center;
 }
 
+#project.fullscroll {
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .fullscroll {
   align-items: flex-starts;
   background-color: bisque;
@@ -72,6 +78,8 @@ h3 {
 content {
   padding: var(--navbarh);
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* nav */
@@ -231,11 +239,16 @@ content {
 
 /* project */
 .projectbox {
+  flex-grow: 1;
+  overflow-y: auto;
   display: grid;
   width: 100%;
+  /*  if use center, the first item not shown or partially hidden: https://dev.to/martinratinaud/centering-flex-items-with-overflow-40j0
   justify-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, calc(100vw /5 + 25px));
+  justify-content: center; 
+  */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(calc(100vw/5 + 25px), 1fr));
   gap: 10px;
 }
 
@@ -244,7 +257,7 @@ content {
   border-radius: 5px;
   box-shadow: 5px 2px 2px black;
   padding: 10px;
-  height: calc(100vw /5);
+  height: calc(100%/1.25);
   width: calc(100vw /5);
   background-color: floralwhite;
   overflow-x: hidden;
@@ -255,33 +268,31 @@ content {
 
 .projectimg {
   width: 100%;
-  height: calc(100vw /16); /* {4}x2x2 */
+  height: 20%; /* {4}x2x2 */
   object-fit: cover;
 }
 
 @media (max-width:1280px) {
   .projectbox {
-    grid-template-columns: repeat(auto-fill, calc(100vw /4 + 25px));
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(calc(100vw/4 + 25px), 1fr));
   }
   
   .project {
     height: calc(100vw /4);
-    width: calc(100vw /4);
+    width: calc(100vw /4 + 25px);
   }
 }
 
 @media (max-width:768px) {
   .projectbox {
-    grid-template-columns: repeat(auto-fill, calc(100vw /2 + 25px));
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(calc(100vw/2 + 25px), 1fr));
   }
   
   .project {
     height: calc(100vw /2);
     width: calc(100vw /2);
-  }
-  
-  .projectimg {
-    height: calc(100vw /8); /* {2}x2x2 */
   }
 }
 
