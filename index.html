@@ -4,6 +4,7 @@
     <title>Kayou's Page</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/animation.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -30,8 +31,8 @@
     <div class="containers">
       <section id="home" class="fullscroll">
         <div>
-          <h1>Hi! I am Kayou!</h1>
-          <p>A fullstack developer</p>
+          <h1 class="greeting">Hi! I am Kayou!</h1>
+          <p class="subGreeting">A fullstack developer</p>
         </div>
       </section>
       <section id="about" class="fullscroll">
@@ -51,19 +52,20 @@
           <div>
             <h3>Skill Sets</h3>
             <div class="codebox">
-              <strong class="code">C++</strong>
-              <strong class="code">Java</strong>
-              <strong class="code">Javascript</strong>
-              <strong class="code">Kotlin</strong>
-              <strong class="code">Android Studio</strong>
-              <strong class="code">CSS</strong>
-              <strong class="code">HTML</strong>
-              <strong class="code">React</strong>
-              <strong class="code">React Native</strong>
-              <strong class="code">Spring</strong>
-              <strong class="code">MongoDB</strong>
-              <strong class="code">MSSQL</strong>
-              <strong class="code">MySQL</strong>
+              <div class="code grow">C++</div>
+              <div class="code grow">Java</div>
+              <div class="code grow">Javascript</div>
+              <div class="code grow">Kotlin</div>
+              <div class="code grow">Android Studio</div>
+              <div class="code grow">CSS</div>
+              <div class="code grow">HTML</div>
+              <div class="code grow">React</div>
+              <div class="code grow">React Native</div>
+              <div class="code grow">Spring</div>
+              <div class="code grow">MongoDB</div>
+              <div class="code grow">MSSQL</div>
+              <div class="code grow">MySQL</div>
+              <div class="code-holder"></div>
             </div>
           </div>
         </content>
@@ -74,8 +76,8 @@
           <div class="projectbox">
             <div class="project">
                 <h3><strong>PLU code Quiz</strong></h3>
-                <a href="https://kayouwu.github.io/plu-quiz/home">
-                  <img src="https://raw.githubusercontent.com/kayoUwU/plu-quiz/master/public/icon_720.webp" class="projectimg" />
+                <a href="https://kayouwu.github.io/plu-quiz/home" target="_blank">
+                  <img src="https://raw.githubusercontent.com/kayoUwU/plu-quiz/master/public/icon_720.webp" class="projectimg" alt="PLU code Quiz"/>
                 </a>
                 <div>
                   <i>This project is use for studying PLU (Price look-up) codes, which are a system of numbers that uniquely identify bulk produce sold in retail locations, through quiz. By knowing the PLU codes, we can check the prices of fruits and vegetables by using their PLU codes.</i>
@@ -98,6 +100,22 @@
                 <i>This is an upcoming project</i>
               </div>
             </div>
+
+            <div class="project">
+              <h3><strong>Upcoming Project</strong></h3>
+              <img src="project-image-32px.png" class="projectimg" />
+              <div>
+                <i>This is an upcoming project</i>
+              </div>
+            </div>
+
+            <div class="project">
+              <h3><strong>Upcoming Project</strong></h3>
+              <img src="project-image-32px.png" class="projectimg" />
+              <div>
+                <i>This is an upcoming project</i>
+              </div>
+            </div>
           </div>
         </content>
       </section>
@@ -111,7 +129,7 @@
             </tr> -->
             <tr>
               <td>Git:</td>
-              <td><a href="https://github.com/kayoUwU">Github</a></td>
+              <td><a href="https://github.com/kayoUwU" target="_blank">Github</a></td>
             </tr>
           </table>
         </content>

@@ -1,0 +1,77 @@
+@keyframes appearFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes appearFromLeft {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes growByFlex {
+    100% {
+        flex-grow: 2; 
+    }
+}
+
+/* home */
+
+/* ref: https://css-tricks.com/snippets/css/typewriter-effect/ */
+.greeting {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    animation-name: appearFromLeft;
+    animation-duration: 2s;
+    animation-timing-function: steps(12, end);
+    /* stop by each word */
+    animation-fill-mode: both;
+}
+
+.subGreeting {
+    animation-name: fadeInFromBottom;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+.nav-bar {
+    transform: translateY(-100%);
+
+    animation-name: appearFromTop;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* code box */
+.code.grow:hover {
+    flex-shrink: 0;
+    color: black;
+    animation: growByFlex 500ms ease-out forwards;
+}
