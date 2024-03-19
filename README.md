@@ -11,5 +11,5 @@ or in Window:
 deploy ignore path:
 ```
 README.md
-*.ps1
+run.ps1
 ```
