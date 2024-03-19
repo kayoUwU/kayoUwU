@@ -71,7 +71,7 @@ h4 {
 }
 
 .fullscroll {
-  align-items: flex-starts;
+  align-items: center;
   background-color: coral;
   color: #2f2f2f;
 }
