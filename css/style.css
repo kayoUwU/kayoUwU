@@ -1,6 +1,17 @@
 :root {
   --navbarh: 45px;
-  --container-horizontal-padding:10%
+  --container-horizontal-padding: 10%
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: orangered;
+}
+::-webkit-scrollbar-thumb {
+  background: aquamarine;
+  border-radius: 10px;
 }
 
 html * {
@@ -14,6 +25,20 @@ html {
 body {
   margin: 0;
   background-image: linear-gradient(to bottom right, orangered, orange);
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a:link,
+footer a:visited {
+  color: orangered;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 h1 {
@@ -38,7 +63,7 @@ h3 {
   position: relative;
   overflow-y: auto;
   scroll-snap-type: y proximity;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
   margin: 0px;
 }
 
@@ -58,7 +83,7 @@ h3 {
 
 .fullscroll {
   align-items: flex-starts;
-  background-color: bisque;
+  background-color: coral;
   color: #2f2f2f;
   padding: 0 var(--container-horizontal-padding);
 }
@@ -71,7 +96,7 @@ h3 {
 }
 
 .fullscroll:nth-child(2n) {
-  background-color: #2f2f2f; 
+  background-color: #2f2f2f;
   color: ghostwhite;
 }
 
@@ -248,27 +273,30 @@ content {
   justify-content: center; 
   */
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(auto-fill, minmax(calc(100vw/5 + 25px), 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(calc(100vw/4), 1fr));
   gap: 10px;
 }
 
 .project {
-  border: 3px solid orangered;
-  border-radius: 5px;
+  border: 2px solid orangered;
+  border-radius: 10px;
   box-shadow: 5px 2px 2px black;
   padding: 10px;
   height: calc(100%/1.25);
   width: calc(100vw /5);
-  background-color: floralwhite;
+  background-color: rgba(255, 250, 240, 0.8); /* floralwhite */
   overflow-x: hidden;
   overflow-y: auto;
-  scroll-snap-type: x mandatory; /* Optional: Enable scroll snapping */
-  scroll-behavior: smooth; /* Optional: Smooth scrolling behavior */
+  scroll-snap-type: x mandatory;
+  /* Optional: Enable scroll snapping */
+  scroll-behavior: smooth;
+  /* Optional: Smooth scrolling behavior */
 }
 
 .projectimg {
   width: 100%;
-  height: 20%; /* {4}x2x2 */
+  height: 20%;
+  /* {4}x2x2 */
   object-fit: cover;
 }
 
@@ -277,7 +305,7 @@ content {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto-fill, minmax(calc(100vw/4 + 25px), 1fr));
   }
-  
+
   .project {
     height: calc(100vw /4);
     width: calc(100vw /4 + 25px);
@@ -289,7 +317,7 @@ content {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fill, minmax(calc(100vw/2 + 25px), 1fr));
   }
-  
+
   .project {
     height: calc(100vw /2);
     width: calc(100vw /2);
@@ -297,6 +325,50 @@ content {
 }
 
 /* contact */
-table {
+.contactbox {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding: 20px 10px;
+  background-image: linear-gradient(to bottom right, white, blanchedalmond, white);
+  border: 3px solid orange;
+  box-shadow: 5px 2px 2px black;
+  color: black;
+  text-align: center;
+}
+
+.contactbox-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactbox-left img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.contactbox table {
+  flex: 2;
+  align-self: center;
   margin: 0px auto;
+  text-align: left;
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+}
+
+.contactbox .icon {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width:640px) {
+  .contactbox {
+    width: 90%;
+  }
 }
