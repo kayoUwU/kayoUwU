@@ -5,7 +5,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 ::-webkit-scrollbar-track {
   background: orangered;
@@ -16,7 +16,7 @@
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active {
   background: aquamarine; 
 }
 
@@ -49,6 +49,10 @@ h3 {
   margin: 10px 0px;
 }
 
+h4 {
+  margin: 3px 0px;
+}
+
 /* full height scroll. ref: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type#examples*/
 .container {
   height: 100vh;
@@ -61,41 +65,39 @@ h3 {
 
 .fullscroll {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  min-height: 100vh;
+  flex-direction: column;
   scroll-snap-align: center;
-}
-
-#project.fullscroll {
-  max-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  padding: var(--navbarh) var(--container-horizontal-padding) var(--footerh) var(--container-horizontal-padding);
 }
 
 .fullscroll {
   align-items: flex-starts;
   background-color: coral;
   color: #2f2f2f;
-  padding: var(--navbarh) var(--container-horizontal-padding) var(--footerh) var(--container-horizontal-padding);
 }
 
 .fullscroll:first-child {
   align-items: center;
   background-color: transparent;
   color: white;
-  padding: 0px;
+  justify-content: center;
+
+  position: sticky;
+  top: 0px;
+  z-index: -1;
 }
+
+#project.fullscroll {
+  height: calc(100vh - var(--navbarh) - var(--footerh));
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 
 .fullscroll:nth-child(2n) {
   background-color: #2f2f2f;
   color: ghostwhite;
-}
-
-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 /* footer */
@@ -259,7 +261,6 @@ footer, .nav-bar {
 .code {
   font-weight: bold;
   text-align: center;
-  padding: 10px;
   border-radius: 5px;
   box-shadow: 5px 2px 2px black;
   background-color: orange;
@@ -269,9 +270,12 @@ footer, .nav-bar {
   flex-shrink: 1;
 }
 
-.code-holder {
-  flex-grow: 2;
-  flex-shrink: 1;
+.code {
+  padding: 10px;
+}
+
+.code.sm {
+  padding: 3px;
 }
 
 /* project */
@@ -284,18 +288,23 @@ footer, .nav-bar {
   justify-items: center;
   justify-content: center; 
   */
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(auto-fill, minmax(calc(100vw/4), 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: repeat(auto-fill, minmax(calc(100vh/3), 1fr)); */
   gap: 10px;
+  padding-right: 10px;
 }
+
+.projectbox::-webkit-scrollbar {
+  width: 20px;
+}
+
 
 .project {
   border: 2px solid orangered;
   border-radius: 10px;
   box-shadow: 5px 2px 2px black;
   padding: 10px;
-  height: calc(100%/1.25);
-  width: calc(100vw /5);
+  height: calc(100vh/3);
   background-color: rgba(255, 250, 240, 0.8); /* floralwhite */
   overflow-x: hidden;
   overflow-y: auto;
@@ -303,6 +312,10 @@ footer, .nav-bar {
   /* Optional: Enable scroll snapping */
   scroll-behavior: smooth;
   /* Optional: Smooth scrolling behavior */
+}
+
+.project::-webkit-scrollbar {
+  width: 3px;
 }
 
 .project::-webkit-scrollbar-thumb {
@@ -316,27 +329,21 @@ footer, .nav-bar {
   object-fit: cover;
 }
 
-@media (max-width:1280px) {
+@media (max-width:1536px) {
   .projectbox {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(calc(100vw/4 + 25px), 1fr));
-  }
-
-  .project {
-    height: calc(100vw /4);
-    width: calc(100vw /4 + 25px);
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media (max-width:768px) {
+@media (max-width:1204px) {
+  .projectbox {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width:640px) {
   .projectbox {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(calc(100vw/2 + 25px), 1fr));
-  }
-
-  .project {
-    height: calc(100vw /2);
-    width: calc(100vw /2);
   }
 }
 
@@ -345,7 +352,8 @@ footer, .nav-bar {
   align-self: center;
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 40%;
+  min-width: 480px;
   padding: 20px 10px;
   background-image: linear-gradient(to bottom right, white, blanchedalmond, white);
   border: 3px solid orange;
@@ -362,8 +370,8 @@ footer, .nav-bar {
 }
 
 .contactbox-left img {
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
 }
 
@@ -386,5 +394,6 @@ footer, .nav-bar {
 @media (max-width:640px) {
   .contactbox {
     width: 90%;
+    min-width: 0px;
   }
 }

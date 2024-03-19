@@ -8,6 +8,16 @@
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
 @keyframes fadeInFromTop {
     from {
         opacity: 0;
@@ -47,6 +57,17 @@
     }
 }
 
+@keyframes rotateCircle {
+    0% {
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* home */
 
 /* ref: https://css-tricks.com/snippets/css/typewriter-effect/ */
@@ -72,6 +93,15 @@
     animation-fill-mode: both;
 }
 
+.greeter {
+    animation-name: rotateCircle;
+    animation-delay: 2s;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+
 .nav-bar {
     animation-name: fadeInFromTop;
     animation-delay: 2s;
@@ -86,9 +116,55 @@ footer {
     animation-fill-mode: both;
 }
 
+
+@keyframes shrink {
+    0% {
+        height: 100vh;
+    }
+    100% {
+        height: 40vh;
+    }
+}
+.fullscroll:first-child {
+    height: 100vh;
+
+    animation-name: shrink;
+    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.fullscroll:nth-child(n+2) {
+    opacity: 0;
+
+    animation-name: fadeInFromBottom;
+    animation-delay: 4s;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
 /* code box */
 .code.grow:hover {
     flex-shrink: 0;
     color: black;
     animation: growByFlex 500ms ease-out forwards;
+}
+
+/* project */
+@keyframes gridGrowHeight {
+    0% {
+        height: calc(100vh/3);
+    }
+    100% {
+        height: calc(100vh/3 * 2);
+    }
+}
+.project:hover {
+    position: relative;
+    color: white;
+    background-color: cornflowerblue;
+    /* grid-row: span 2; */
+    animation: gridGrowHeight 1s ease-out both;
 }
