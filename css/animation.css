@@ -1,13 +1,3 @@
-@keyframes appearFromTop {
-    from {
-        transform: translateY(-100%);
-    }
-
-    to {
-        transform: translateY(0%);
-    }
-}
-
 @keyframes appearFromLeft {
     from {
         width: 0;
@@ -15,6 +5,17 @@
 
     to {
         width: 100%;
+    }
+}
+
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1
     }
 }
 
@@ -29,9 +30,20 @@
     }
 }
 
+@keyframes fadeInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
 @keyframes growByFlex {
     100% {
-        flex-grow: 2; 
+        flex-grow: 2;
     }
 }
 
@@ -61,12 +73,17 @@
 }
 
 .nav-bar {
-    transform: translateY(-100%);
-
-    animation-name: appearFromTop;
+    animation-name: fadeInFromTop;
     animation-delay: 2s;
     animation-duration: 1s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
+}
+
+footer {
+    animation-name: fadeInFromBottom;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 /* code box */
