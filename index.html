@@ -29,7 +29,9 @@
 
     <div class="containers" id="home">
       <section class="fullscroll">
-        <img src="favicon.ico" alt="Kayou" class="greeter" />
+        <div class="greeter">
+          <img src="favicon.ico" alt="Kayou" />
+        </div>
         <div><h1 class="greeting">Hi! I am Kayou!</h1></div>
         <p class="subGreeting">A fullstack developer</p>
       </section>
@@ -63,32 +65,36 @@
             </tr>
           </table>
         </div>
-        <div>
-          <p>
+        <div class="about-description">
+          <div>
             I am a <strong>fullstack developer</strong> that have experiences on
             building both
             <strong>Frontend and Backend of Web Applications</strong>,
             <strong>Hybrid Apps</strong> and <strong>Android Apps</strong>, and
             <strong>IoT Applications</strong>.
-          </p>
+          </div>
         </div>
+
         <div>
           <h3>Skill Sets</h3>
           <div class="codebox">
             <div class="code grow">C++</div>
-            <div class="code grow">Java</div>
-            <div class="code grow">Javascript</div>
             <div class="code grow">Kotlin</div>
-            <div class="code grow">Android Studio</div>
+            <div class="code grow">Java</div>
+            <div class="code grow">Java Spring</div>
+            <div class="code grow">Javascript</div>
+            <div class="code grow">Python</div>
             <div class="code grow">CSS</div>
             <div class="code grow">HTML</div>
             <div class="code grow">React</div>
+            <div class="code grow">Android Studio</div>
             <div class="code grow">React Native</div>
-            <div class="code grow">Spring</div>
-            <div class="code grow">MongoDB</div>
             <div class="code grow">MSSQL</div>
             <div class="code grow">MySQL</div>
-            <div class="code-holder"></div>
+            <div class="code grow">PostgreSQL</div>
+            <div class="code grow">AWS</div>
+            <div class="code grow">REST API</div>
+            <div class="code grow">GitHub Actions</div>
           </div>
         </div>
       </section>
@@ -96,29 +102,34 @@
         <h2>Projects</h2>
         <div class="projectbox">
           <div class="project">
-            <h4><strong>Profile</strong></h4>
-            <a href="https://kayouwu.github.io" target="_blank">
-              <img src="favicon.ico" class="projectimg" alt="Profile" />
-            </a>
-            <div>
-              <i>This is use as my profile website.</i>
+            <a href="https://kayouwu.github.io" target="_blank"> </a>
+            <h4><strong>Portfolio</strong></h4>
+            <div class="projectimg">
+              <img src="favicon.ico" alt="Profile" />
+            </div>
+            <div class="project-description">
+              <i>This is a static website which is used as my portfolio.</i>
             </div>
             <div class="codebox">
               <strong class="code sm">HTML</strong>
               <strong class="code sm">CSS</strong>
+              <strong class="code sm">GitHub Actions</strong>
             </div>
           </div>
 
           <div class="project">
+            <a
+              href="https://kayouwu.github.io/plu-quiz/home"
+              target="_blank"
+            ></a>
             <h4><strong>PLU code Quiz</strong></h4>
-            <a href="https://kayouwu.github.io/plu-quiz/home" target="_blank">
+            <div class="projectimg">
               <img
                 src="https://raw.githubusercontent.com/kayoUwU/plu-quiz/master/public/icon_720.webp"
-                class="projectimg"
                 alt="PLU code Quiz"
               />
-            </a>
-            <div>
+            </div>
+            <div class="project-description">
               <i
                 >This project is use for studying PLU (Price look-up) codes,
                 which are a system of numbers that uniquely identify bulk
@@ -131,16 +142,27 @@
               <strong class="code sm">React</strong>
               <strong class="code sm">Next.js</strong>
               <strong class="code sm">Tailwind CSS</strong>
-              <strong class="code sm">Github Action</strong>
+              <strong class="code sm">GitHub Actions</strong>
               <strong class="code sm">Python</strong>
               <strong class="code sm">Progressive Web App</strong>
             </div>
           </div>
           <div class="project">
             <h4><strong>Upcoming Project</strong></h4>
-            <img src="github-mark.svg" class="projectimg" />
-            <div>
+            <div class="projectimg">
+              <img src="github-mark.svg" />
+            </div>
+            <div class="project-description">
               <i>This is an upcoming project</i>
+            </div>
+          </div>
+          <div class="project">
+            <h4><strong>Upcoming Project 2</strong></h4>
+            <div class="projectimg">
+              <img src="github-mark.svg" />
+            </div>
+            <div class="project-description">
+              <i>This is an upcoming project 2</i>
             </div>
           </div>
         </div>
