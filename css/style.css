@@ -279,6 +279,8 @@ footer, .nav-bar {
 .codebox {
   display: flex;
   flex-flow: row wrap;
+  column-gap: 1ch;
+  row-gap: 1ch;
   justify-content: space-between;
 }
 
@@ -289,7 +291,6 @@ footer, .nav-bar {
   box-shadow: 5px 2px 2px black;
   background-color: orange;
   color: white;
-  margin: 2px 5px;
   flex-grow: 1;
   flex-shrink: 1;
 }
