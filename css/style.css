@@ -1,6 +1,6 @@
 :root {
   --navbarh: 45px;
-  --footerh: 45px;
+  --footerh: 55px;
   --container-horizontal-padding: 20%;
   --container-horizontal-padding-sm: 10%;
 }
@@ -57,7 +57,7 @@ h4 {
 
 /* full height scroll. ref: https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type#examples*/
 .container {
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   overflow-y: auto;
   scroll-snap-type: y proximity;
@@ -92,8 +92,8 @@ h4 {
 }
 
 #project.fullscroll {
-  height: calc(100vh - var(--navbarh) - var(--footerh));
-  max-height: 100vh;
+  height: calc(100dvh - var(--navbarh) - var(--footerh));
+  max-height: 100dvh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -259,7 +259,7 @@ footer, .nav-bar {
   }
 
   .nav-bar>#nav-check:checked~.dropdown-menu {
-    height: calc(100vh - var(--navbarh));
+    height: calc(100dvh - var(--navbarh));
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -314,9 +314,13 @@ footer, .nav-bar {
   justify-content: center; 
   */
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* grid-template-rows: repeat(auto-fill, minmax(calc(100vh/3), 1fr)); */
+  /* grid-template-rows: repeat(auto-fill, minmax(calc(100dvh/3), 1fr)); */
   gap: 10px;
   padding-right: 10px;
+}
+
+.projectbox::-webkit-scrollbar {
+  width: 10px;
 }
 
 .project {
@@ -325,7 +329,7 @@ footer, .nav-bar {
   border-radius: 10px;
   box-shadow: 5px 2px 2px black;
   padding: 10px;
-  height: calc(100vh/3);
+  height: calc(100dvh/3);
   background-color: rgba(255, 250, 240, 0.8); /* floralwhite */
   overflow-x: hidden;
   overflow-y: auto;
@@ -391,8 +395,8 @@ footer, .nav-bar {
 
 .projectimg img {
   width: 90%;
-  height: calc(100vh/3);
-  max-height: calc(100vh/3);
+  height: calc(100dvh/3);
+  max-height: calc(100dvh/3);
   display: block;
   margin-left: auto;
   margin-right: auto;

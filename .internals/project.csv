@@ -1,0 +1,4 @@
+projectName,projectDescription,projectIcon,projectLink,[]techList
+Portfolio,This is a static website which is used as my portfolio.,favicon.ico,https://kayouwu.github.io,"['HTML','CSS','Python','GitHub Actions']"
+PLU code Quiz,"This project is use for studying PLU (Price look-up) codes,which are a system of numbers that uniquely identify bulkproduce sold in retail locations, through quiz. By knowing thePLU codes, we can check the prices of fruits and vegetables by using their PLU codes.",https://raw.githubusercontent.com/kayoUwU/plu-quiz/master/public/icon_720.webp,https://kayouwu.github.io/plu-quiz/home,"['React','Next.js','Tailwind CSS','GitHub Actions','Python','Progressive Web App']"
+Wordle,This a ui project for Wordle Game.,https://raw.githubusercontent.com/kayoUwU/wordle/master/public/icon-720.webp,kayouwu.github.io/wordle,"['React','Next.js','GitHub Actions']"
