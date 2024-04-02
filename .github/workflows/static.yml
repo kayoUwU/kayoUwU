@@ -37,7 +37,7 @@ jobs:
       - name: Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10' 
+          python-version: '3.12' 
       - name: Inject Project Data
         run: |
           python .internals/injectHtml.py -c '.internals/project.csv' -t '.internals/template.html' -i 'index.html' -o 'index.html'
